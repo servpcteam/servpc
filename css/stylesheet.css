@@ -11,7 +11,7 @@ body {
 
 .logo {
     text-align: center;
-    border: solid, black;
+    border: solid black;
     margin-left: auto;
     margin-right: auto;
 }
@@ -21,4 +21,14 @@ body {
     margin-top: 20px;
     height: 300px;
     width: 500px
+}
+
+.login-form {
+    margin-top: 20px;
+    margin-left: 310px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 10px;
 }
