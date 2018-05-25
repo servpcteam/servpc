@@ -1,4 +1,17 @@
 <!doctype html>
+<?php
+session_start();
+
+
+if (isset($_SESSION['loggedIn']) && ($_SESSION['loggedIn'] == true) && ($_SESSION['isAdmin'] == true)){
+    header("location: adminpanel.php");
+    exit();
+} elseif (isset($_SESSION['loggedIn']) && ($_SESSION['loggedIn'] == true)) {
+    header("location: userpanel.php");
+    exit;
+}
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,8 +30,14 @@
             <input type="password" name="haslo" placeholder="Hasło">
             <input type="submit" value="Zaloguj">
         </form>
+        <?php
+            if (isset($_SESSION['error'])){
+                echo $_SESSION['error'];
+                unset($_SESSION['error']);
+            }
+        ?>
     </div>
-    <div class="register-link"><a href="php/register.php">Nie masz konta - załóż je tutaj</a></div>
+    <div class="register-link"><a href="register.php">Nie masz konta - załóż je tutaj</a></div>
 </div>
 
 </body>

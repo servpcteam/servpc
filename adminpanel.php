@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['loggedIn'])) {
-    header("location: index.php");
-    exit();
-}
-?>
-
-
 <!doctype html>
 <html lang="pl">
 <head>
@@ -15,14 +5,21 @@ if (!isset($_SESSION['loggedIn'])) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Panel użytkownika</title>
+    <title>ADMIN PANEL</title>
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
 </head>
 <body>
 <?php
-echo "Zalogowano jako: " . $_SESSION['imie'] . " " . $_SESSION['nazwisko'];
+session_start();
+if (isset($_SESSION['isAdmin'])) {
+    echo "Zalogowano jako Administrator: " . $_SESSION['imie'] . " " . $_SESSION['nazwisko'];
+    echo '<a href="php/logout.php">Wyloguj</a>';
+} else {
+    header("location: index.php");
+}
+
+
 ?>
-<a href="php/logout.php">Wyloguj</a>
 
 </body>
 </html>
