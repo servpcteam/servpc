@@ -24,5 +24,17 @@ echo "Zalogowano jako: " . $_SESSION['imie'] . " " . $_SESSION['nazwisko'];
 ?>
 <a href="php/logout.php">Wyloguj</a>
 
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

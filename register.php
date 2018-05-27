@@ -74,7 +74,12 @@ if (isset($_POST['email'])) {
             }
             if ($validationOk == true) {
                 // Insert do bazy
-                if ($connection->query("INSERT INTO KLIENT VALUES (NULL, '$imie', '$nazwisko', '$telefon', '$email', '$hasloHash', 'user')")) {
+                if ($connection->query(sprintf($queryRegister,
+                    mysqli_real_escape_string($connection, $imie),
+                    mysqli_real_escape_string($connection, $nazwisko),
+                    mysqli_real_escape_string($connection, $telefon),
+                    mysqli_real_escape_string($connection, $email),
+                    mysqli_real_escape_string($connection, $hasloHash)))) {
                     $_SESSION['registrationCompleted'] = true;
                     header("location: welcome.php");
                 } else {
