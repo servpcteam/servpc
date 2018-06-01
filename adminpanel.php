@@ -1,23 +1,25 @@
 <!doctype html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php
+		require_once('./inc/header.php')
+	?>
     <title>ADMIN PANEL</title>
-    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
 </head>
 <body>
-<?php
-session_start();
-if (isset($_SESSION['isAdmin'])) {
-    echo "Zalogowano jako Administrator: " . $_SESSION['imie'] . " " . $_SESSION['nazwisko'];
-    echo '<a href="php/logout.php">Wyloguj</a>';
-} else {
-    header("location: index.php");
-}
-?>
+	<div class = "row">
+		<?php
+	
+		session_start();
+			if (isset($_SESSION['isAdmin'])) {
+    			echo "<div class = 'col-sm-4'> Zalogowano jako Administrator: </div>
+    					<div class = 'col-sm-4'>" . $_SESSION['imie'] . " " . $_SESSION['nazwisko']."</div>";
+    			echo '<div class = "col-sm-4"><a href="php/logout.php">Wyloguj</a></div>';
+			} else {
+    			header("location: index.php");
+			}
+		?>
+	</div>
 
 
 
@@ -30,6 +32,8 @@ if (isset($_SESSION['isAdmin'])) {
 
 
 
-
+	<?php
+		require_once('./inc/footer.php')
+	?>
 </body>
 </html>
