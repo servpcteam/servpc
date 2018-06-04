@@ -52,10 +52,10 @@ if (isset($_POST['email'])) {
     //hashowanie hasła
     $hasloHash = password_hash($haslo, PASSWORD_DEFAULT);
 
-    require_once "php/connection.php";
+    require_once "./php/DBconfig.class.php";
 
     try {
-        $connection = @new mysqli($host, $uzytkownikBazyDanych, $hasloBazyDanych, $nazwaBazyDanych);
+        $connection = @new mysqli(DBconfig::host, DBconfig::login, DBconfig::password, DBconfig::database);
         if ($connection->connect_errno != 0) {
             throw new Exception(mysqli_connect_errno());
         } else {
@@ -98,11 +98,9 @@ if (isset($_POST['email'])) {
 <!doctype html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+    <?php
+        require_once('./inc/header.php')
+    ?>
     <title>Rejestracja</title>
 </head>
 <body>

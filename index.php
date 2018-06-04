@@ -17,7 +17,7 @@ if (isset($_SESSION['loggedIn']) && ($_SESSION['loggedIn'] == true) && ($_SESSIO
    <?php
         require_once('./inc/header.php')
     ?>
-    <title>Panel użytkownika</title>
+    <title>Serwis komputerowy</title>
 </head>
 <body>
 <div id="main_container">

@@ -1,3 +1,13 @@
+<?php
+session_start();
+require('./php/DB.class.php');
+
+if (!isset($_SESSION['loggedIn'])) {
+    header("location: index.php");
+    exit();
+}
+?>
+
 <!doctype html>
 <html lang="pl">
 <head>

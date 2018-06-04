@@ -30,24 +30,7 @@ $res = new DBconnector();
             } else {
                 header("Location: ../userpanel.php");
             }
-    } /*else {
+    } else {
         $_SESSION['error'] = '<span class="error">Nieprawidlowy login lub haslo</span>';
         header("location: ../index.php");
     }
-    /*
-        if ($userNumber > 0) {
-            $row = $result->fetch_assoc();
-            if (password_verify($haslo, $row['Haslo'])) {
-
-               
-            } else {
-                
-            }
-        } else {
-            $_SESSION['error'] = '<span class="error">Nieprawidlowy login lub haslo</span>';
-            header("location: ../index.php");
-        }
-    }
-    $connection->close();
-*/
-
