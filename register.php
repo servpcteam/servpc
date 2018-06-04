@@ -109,6 +109,7 @@ if (isset($_POST['email'])) {
     <div class="col-4"></div>
     <div class="col-4">
     <div class="card-body">
+        <h5 class="card-title">Rejestracja</h5>
         <form method="post">
             <div class="form-group" style="width: 18rem">
                 <label for="inputName">Imie</label>

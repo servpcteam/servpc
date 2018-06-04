@@ -25,6 +25,7 @@ if (isset($_SESSION['loggedIn']) && ($_SESSION['loggedIn'] == true) && ($_SESSIO
     <div class="col-4"></div>
     <div class="col-4">
     <div class="card-body">
+        <h5 class="card-title">Logowanie</h5>
     <form action="php/login.php" method="post">
         <div class="form-group" style="width: 18rem">
             <label for="inputEmail">Adres email</label>

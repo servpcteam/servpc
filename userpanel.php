@@ -64,6 +64,7 @@ if (!isset($_SESSION['loggedIn'])) {
 
 
 
+
 <?php
 	require_once('./inc/footer.php')
 ?>
