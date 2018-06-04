@@ -104,56 +104,71 @@ if (isset($_POST['email'])) {
     <title>Rejestracja</title>
 </head>
 <body>
-<form method="post">
-    <br/> Imie:
-    <input type="text" name="imie" placeholder="Imie"><br/>
-    <?php
-    if (isset($_SESSION['e_imie'])) {
-        echo '<span class="error">' . $_SESSION['e_imie'] . '</span>';
-        unset($_SESSION['e_imie']);
-    }
-    ?>
-    <br/>Nazwisko:
-    <input type="text" name="nazwisko" placeholder="Nazwisko"><br/>
-    <?php
-    if (isset($_SESSION['e_nazwisko'])) {
-        echo '<span class="error">' . $_SESSION['e_nazwisko'] . '</span>';
-        unset($_SESSION['e_nazwisko']);
-    }
-    ?>
-    <br/>Telefon:
-    <input type="tel" name="telefon" placeholder="Telefon"><br/>
-    <br/> E-mail:
-    <input type="email" name="email" placeholder="E-mail"><br/>
-    <?php
-    if (isset($_SESSION['e_email'])) {
-        echo '<span class="error">' . $_SESSION['e_email'] . '</span>';
-        unset($_SESSION['e_email']);
-    }
-    ?>
-    <br/> Hasło:
-    <input type="password" name="haslo" placeholder="Hasło"><br/>
-    <?php
-    if (isset($_SESSION['e_haslo'])) {
-        echo '<span class="error">' . $_SESSION['e_haslo'] . '</span>';
-        unset($_SESSION['e_haslo']);
-    }
-    ?>
-    <br/> Powtórz hasło:
-    <input type="password" name="haslo1" placeholder="Powtórz hasło"><br/>
-    <br/>
-    <label>
-        <a href="tos.php">Akceptuję regulamin</a> <input type="checkbox" name="tos" id="tos-checkbox">
-    </label>
-    <br/>
+    <div class="card border-primary mb-3">
+    <img src="./img/1.jpg" class="card-img-top"/>
+    <div class="col-4"></div>
+    <div class="col-4">
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group" style="width: 18rem">
+                <label for="inputName">Imie</label>
+                <input id="inputName" type="text" name="imie" placeholder="Imie" class="form-control">
+                     <?php
+                        if (isset($_SESSION['e_imie'])) {
+                        echo '<span class="error">' . $_SESSION['e_imie'] . '</span>';
+                        unset($_SESSION['e_imie']);
+                        }
+                    ?>
+            </div>
+            <div class="form-group" style="width: 18rem">
+                <label for="inputSurname">Nazwisko</label>
+                <input id="inputSurname" type="text" name="nazwisko" placeholder="Nazwisko" class="form-control">
+                <?php
+                    if (isset($_SESSION['e_nazwisko'])) {
+                    echo '<span class="error">' . $_SESSION['e_nazwisko'] . '</span>';
+                    unset($_SESSION['e_nazwisko']);
+                    }
+                ?>
+            </div>
+            <div class="form-group" style="width: 18rem">
+                <label for="inputPhone">Telefon</label>
+                <input id="inputPhone" type="tel" name="telefon" placeholder="Telefon" class="form-control">
+            </div>    
+            <div class="form-group" style="width: 18rem">
+                <label for="inputEmail">Email</label>
+                <input type="email" name="email" placeholder="E-mail" class="form-control" id="inputEmail">
+                <?php
+                    if (isset($_SESSION['e_email'])) {
+                    echo '<span class="error">' . $_SESSION['e_email'] . '</span>';
+                    unset($_SESSION['e_email']);
+                    }
+                ?>
+            </div>
+            <div class="form-group" style="width: 18rem">
+                <label for="inputPassword1">Hasło</label>
+                <input type="password" name="haslo" placeholder="Hasło" class="form-control" id="inputPassword1">
+                    <?php
+                        if (isset($_SESSION['e_haslo'])) {
+                        echo '<span class="error">' . $_SESSION['e_haslo'] . '</span>';
+                        unset($_SESSION['e_haslo']);
+                        }
+                    ?>    
+            <div class="form-group" style="width: 18rem">
+                <label for="inputPassword2">Powtórz hasło</label>
+                <input id="inputPassword2" type="password" name="haslo1" placeholder="Powtórz hasło" class="form-control">    
+            </div>
+            <div class="form-group" style="width: 18rem">
+                <label for="checkTos">
+                    <a href="tos.php">Akceptuję regulamin</a> <input id="checkTos" type="checkbox" name="tos" id="tos-checkbox">
+                </label>
+            </div>
     <?php
     if (isset($_SESSION['e_tos'])) {
         echo '<span class="error">' . $_SESSION['e_tos'] . '</span>';
         unset($_SESSION['e_tos']);
     }
     ?>
-    <br/>
-    <input type="submit" value="Załóż konto">
+    <button class="btn btn-primary" type="submit">Załóż konto</button>
 </form>
 
 </body>
