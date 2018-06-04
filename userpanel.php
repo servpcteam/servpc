@@ -48,28 +48,19 @@ if (!isset($_SESSION['loggedIn'])) {
 	<?php
 		$idKlient = $_SESSION['idKlient'];
 		$db = new DBconnector();
-		$orders = $db->get_array("SELECT sprzet.SerialNumber, rodzaj.Nazwa, zgloszenie.Opis, status_z.Status FROM ((sprzet INNER JOIN zgloszenie ON sprzet.ID_Sprzet = zgloszenie.SPRZET_ID_Sprzet) INNER JOIN status_z ON status_z.ID_Status = zgloszenie.STATUS_Z_ID_Status) INNER JOIN rodzaj ON rodzaj.ID_Rodzaj = sprzet.RODZAJ_ID_Rodzaj WHERE zgloszenie.KLIENT_ID_Klient = $idKlient");
-		foreach($orders as $order) {
+		$orders = $db->get_array("SELECT zgloszenie.ID_Zgloszenie, sprzet.SerialNumber, rodzaj.Nazwa, zgloszenie.Opis, status_z.Status FROM ((sprzet INNER JOIN zgloszenie ON sprzet.ID_Sprzet = zgloszenie.SPRZET_ID_Sprzet) INNER JOIN status_z ON status_z.ID_Status = zgloszenie.STATUS_Z_ID_Status) INNER JOIN rodzaj ON rodzaj.ID_Rodzaj = sprzet.RODZAJ_ID_Rodzaj WHERE zgloszenie.KLIENT_ID_Klient = $idKlient");
+    foreach($orders as $order) {
 			echo '<tr>'.'<td>'.$order['Nazwa'].'</td>'
 			.'<td>'.$order['SerialNumber'].'</td>'
 			.'<td>'.$order['Opis'].'</td>'
 			.'<td>'.$order['Status'].'</td>'
-			.'<td><a class="btn btn-primary" href="#">Zmień</a></td>'
+			.'<td><a class="btn btn-primary edit-status" href="#" data-id="'.$order['ID_Zgloszenie'].'">Zmień</a></td>'
 			.'</tr>';
 		}
 	?>
       </tr>
    </tbody>
 </table>
-
-
-
-
-
-
-
-
-
 
 
 
