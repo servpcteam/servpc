@@ -44,8 +44,8 @@ if (!isset($_SESSION['loggedIn'])) {
       <th scope="col">Rodzaj</th>
       <th scope="col">Numer seryjny</th>
       <th scope="col">Opis</th>
-      <th scope="col">Statut</th>
-      <th scope="col">Zmień statut</th>
+      <th scope="col">Status</th>
+      <th scope="col">Zmień status</th>
     </tr>
   </thead>
   <tbody>
