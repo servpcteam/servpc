@@ -40,7 +40,6 @@ if (!isset($_SESSION['loggedIn'])) {
       <th scope="col">Numer seryjny</th>
       <th scope="col">Opis</th>
       <th scope="col">Statut</th>
-      <th scope="col">Zmień statut</th>
     </tr>
   </thead>
   <tbody>
@@ -54,7 +53,6 @@ if (!isset($_SESSION['loggedIn'])) {
 			.'<td>'.$order['SerialNumber'].'</td>'
 			.'<td>'.$order['Opis'].'</td>'
 			.'<td>'.$order['Status'].'</td>'
-			.'<td><a class="btn btn-primary edit-status" href="#" data-id="'.$order['ID_Zgloszenie'].'">Zmień</a></td>'
 			.'</tr>';
 		}
 	?>
