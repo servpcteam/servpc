@@ -17,17 +17,27 @@ if (!isset($_SESSION['loggedIn'])) {
     <title>ADMIN PANEL</title>
 </head>
 <body>
-	<div class = "row">
-		<?php
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<?php
 			if (isset($_SESSION['isAdmin'])) {
-    			echo "<div class = 'col-sm-4'> Zalogowano jako Administrator: </div>
-    					<div class = 'col-sm-4'>" . $_SESSION['imie'] . " " . $_SESSION['nazwisko']."</div>";
-    			echo '<div class = "col-sm-4"><a href="php/logout.php">Wyloguj</a></div>';
+    			echo "<a class='navbar-brand' href='#'> Zalogowano jako Administrator: " . $_SESSION['imie'] 
+    			. " " . $_SESSION['nazwisko']."</a>";
+    			echo "<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
+    				<span class='navbar-toggler-icon'></span>
+  					</button>
+  					<div class='collapse navbar-collapse md-right-auto' id='navbarNavDropdown'>
+    					<ul class='navbar-nav'>
+      						<li class='navbar-text'>
+        						<a class='nav-link' href='php/logout.php'>Wyloguj</a>
+      						</li>
+    					</ul>
+  					</div>
+				</nav>";
 			} else {
     			header("location: index.php");
 			}
 		?>
-	</div>
+	
 	<table class="table">
   <thead>
     <tr>
