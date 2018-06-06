@@ -73,10 +73,11 @@ if (!isset($_SESSION['loggedIn'])) {
      <?php   
 
           foreach ($devices as $device) {
-           echo '<option value="'.$device['ID_Rodzaj'].'>'.$device['Nazwa'].'</option>.';
+           echo '<option value="'.$device['ID_Rodzaj'].'">'.$device['Nazwa'].'</option>';
           }
         ?>
       </select> 
+
     </div>
 </div>
 
