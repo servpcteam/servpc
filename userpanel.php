@@ -64,12 +64,11 @@ if (!isset($_SESSION['loggedIn'])) {
 <div>
   <?php
     $devices = $db->get_array("SELECT * FROM rodzaj");
-    var_dump($devices);
   ?>
-  <form method="post">
+  <form method="post" id="dodanie">
     <div class="form-group">
       <label for="selectSprzetIDSprzet">Rodzaj sprzetu</label>
-       <select id="selectSprzetIDSprzet">
+       <select id="selectSprzetIDSprzet" name="sprzet">
      <?php   
 
           foreach ($devices as $device) {
@@ -77,8 +76,15 @@ if (!isset($_SESSION['loggedIn'])) {
           }
         ?>
       </select> 
-
-    </div>
+      <label for="inputSerialNumber">Numer Seryjny</label>
+      <input type="text" name="numerseryjny" id="inputSerialNumber"/>
+       <label for="inputProducent">Producent</label>
+      <input type="text" name="producent" id="inputProducent"/>
+      <label for="inputOpis">Opis</label>
+      <input type="text" name="opis" id="inputOpis"/>
+      <a class="btn btn-primary create-order" href="#">Dodaj zgłoszenie</a>
+    
+       </div>
 </div>
 
 

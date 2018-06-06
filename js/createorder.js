@@ -1,13 +1,20 @@
 $(document).ready(function() {
-	$('.edit-status').click(function() {
-		//console.log("click")
-		var id = $(this).data('id');
-		//console.log(id)
+	$('.create-order').click(function() {
+	
+		var sprzet = document.querySelector('#dodanie select[name="sprzet"]').value;
+		var numerseryjny = document.querySelector('#dodanie input[name="numerseryjny"]').value;
+		var producent = document.querySelector('#dodanie input[name="producent"]').value;
+		var opis = document.querySelector('#dodanie input[name="opis"]').value;
+		console.log(opis)
+
 		$.ajax({
 			method: "POST",
-			url: './php/edit_status.php',
+			url: './php/create_order.php',
 			data: {
-				id: id
+				sprzet: sprzet
+				numerseryjny : numerseryjny
+				producent : producent
+				opis : opis
 			},
 			complete:function(){location.reload()},
 			
