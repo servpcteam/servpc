@@ -86,5 +86,5 @@ if (!isset($_SESSION['loggedIn'])) {
 		require_once('./inc/footer.php')
 	?>
 </body>
-<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/editstatus.js"></script>
 </html>

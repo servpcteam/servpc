@@ -11,16 +11,16 @@ $(document).ready(function() {
 			method: "POST",
 			url: './php/create_order.php',
 			data: {
-				sprzet: sprzet
-				numerseryjny : numerseryjny
-				producent : producent
-				opis : opis
+				sprzet: sprzet,
+				numerseryjny : numerseryjny,
+				producent : producent,
+				opis : opis,
 			},
 			complete:function(){location.reload()},
 			
 			success: function(result) {
 				//console.log("successfull");
-				//alert(result);
+				alert(result);
 
 			},
 			error: function(result) {
