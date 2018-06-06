@@ -18,6 +18,7 @@ if (isset($_SESSION['loggedIn']) && ($_SESSION['loggedIn'] == true) && ($_SESSIO
         require_once('./inc/header.php')
     ?>
     <title>Serwis komputerowy</title>
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>   
 <div class="card border-primary mb-3">

@@ -102,6 +102,7 @@ if (isset($_POST['email'])) {
         require_once('./inc/header.php')
     ?>
     <title>Rejestracja</title>
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
     <div class="card border-primary mb-3">
