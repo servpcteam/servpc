@@ -61,6 +61,24 @@ if (!isset($_SESSION['loggedIn'])) {
       </tr>
    </tbody>
 </table>
+<div>
+  <?php
+    $devices = $db->get_array("SELECT * FROM rodzaj");
+    var_dump($devices);
+  ?>
+  <form method="post">
+    <div class="form-group">
+      <label for="selectSprzetIDSprzet">Rodzaj sprzetu</label>
+       <select id="selectSprzetIDSprzet">
+     <?php   
+
+          foreach ($devices as $device) {
+           echo '<option value="'.$device['ID_Rodzaj'].'>'.$device['Nazwa'].'</option>.';
+          }
+        ?>
+      </select> 
+    </div>
+</div>
 
 
 
@@ -69,5 +87,5 @@ if (!isset($_SESSION['loggedIn'])) {
 	require_once('./inc/footer.php')
 ?>
 </body>
-<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/createorder.js"></script>
 </html>
