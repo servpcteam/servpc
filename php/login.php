@@ -13,8 +13,6 @@ $res = new DBconnector();
     
     $whoisEmail = $res->get_array(sprintf($queryLogin, $email))[0];
     $userNumber = count($whoisEmail);
-    var_dump($haslo);
-    var_dump($whoisEmail);
     if ($userNumber > 0 && password_verify($haslo, $whoisEmail['Haslo']))
     {
         $_SESSION['loggedIn'] = true;
