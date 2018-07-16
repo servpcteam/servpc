@@ -53,7 +53,7 @@ if (!isset($_SESSION['loggedIn'])) {
     <tr>
 	<?php
 		$db = new DBconnector();
-		$orders = $db->get_array("SELECT zgloszenie.ID_Zgloszenie, sprzet.Producent, sprzet.SerialNumber, rodzaj.Nazwa, zgloszenie.Opis, status_z.Status FROM ((sprzet INNER JOIN zgloszenie ON sprzet.ID_Sprzet = zgloszenie.SPRZET_ID_Sprzet) INNER JOIN status_z ON status_z.ID_Status = zgloszenie.STATUS_Z_ID_Status) INNER JOIN rodzaj ON rodzaj.ID_Rodzaj = sprzet.RODZAJ_ID_Rodzaj");
+		$orders = $db->get_array("SELECT zgloszenie.ID_Zgloszenie, sprzet.Producent, sprzet.SerialNumber, rodzaj.Nazwa, zgloszenie.Opis, status_z.Status FROM ((sprzet INNER JOIN zgloszenie ON sprzet.ID_Sprzet = zgloszenie.SPRZET_ID_Sprzet) INNER JOIN status_z ON status_z.ID_Status = zgloszenie.STATUS_Z_ID_Status) INNER JOIN rodzaj ON rodzaj.ID_Rodzaj = sprzet.RODZAJ_ID_Rodzaj ORDER BY zgloszenie.STATUS_Z_ID_Status");
     	foreach($orders as $order) {
 			echo '<tr>'.'<td>'.$order['Nazwa'].'</td>'
 			.'<td>'.$order['Producent'].'</td>'

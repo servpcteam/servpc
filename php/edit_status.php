@@ -8,5 +8,4 @@ $id_status_array = $db->get_array("SELECT STATUS_Z_ID_Status FROM Zgloszenie WHE
 $id_status = ($id_status_array[0]['STATUS_Z_ID_Status'] % 3) + 1;
 $db->execute("UPDATE Zgloszenie SET STATUS_Z_ID_Status = $id_status WHERE ID_Zgloszenie=$id");
 
-echo "Zmieniono status";
 exit();
